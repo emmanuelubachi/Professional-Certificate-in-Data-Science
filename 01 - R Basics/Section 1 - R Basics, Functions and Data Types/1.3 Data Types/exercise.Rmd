@@ -1,0 +1,142 @@
+---
+title: "Exercise 1"
+author: "Emmanuel Ubachi"
+date: "April 22, 2023"
+output: html_document
+---
+## Exercise 1
+### str
+We're going to be using the following dataset for this module. Run this code in the console.
+
+_library(dslabs)_
+_data(murders)_
+
+Next, use the function _str_ to examine the structure of the _murders_ object. We can see that this object is a data frame with 51 rows and five columns.
+
+Which of the following best describes the variables represented in this data frame:
+#### Solution
+*The state name, the abbreviation of the state name, the state's region, and the state's population and the total number of murders for 2010.
+
+
+## Exercise 2
+### Variable names
+In the previous question, we saw the different variables that are a part of this dataset from the output of the _str()_ function. The function _names()_ is specifically designed to extract the column names from a data frame.
+
+#### Instructions
+For this question, we will use the _names()_ function to extract the column names of the _murders_ data frame.
+
+*What are the column names used by the _murders_ data frame for the five variables?
+
+```{r}
+# Load package and data
+
+library(dslabs)
+data(murders)
+
+# Use the function names to extract the variable names
+
+## Solution
+names(murders)
+```
+
+
+## Exercise 3
+### Examining Variables
+In this module we have learned that every variable has a class. For example, the class can be a character, numeric or logical. The function _class()_ can be used to determine the class of an object.
+
+Here we are going to determine the class of one of the variables in the _murders_ data frame. To extract variables from a data frame we use _$_, referred to as the accessor.
+
+In the editor we show an example of how to do this. Let`s try it out for ourselves.
+
+#### Instructions
+Use the accessor _$_ to extract the state abbreviations and assign them to the object _a_. What is the class of this object?
+
+```{r}
+# To access the population variable from the murders dataset use this code:
+p <- murders$population 
+
+# To determine the class of object `p` we use this code:
+class(p)
+
+# Use the accessor to extract state abbreviations and assign it to a
+a <- murders$abb
+
+# Determine the class of a
+class(a)
+```
+
+## Exercise 3
+### Multiple ways to access variables
+An important lesson you should learn early on is that there are multiple ways to do things in R. For example, to generate the first five integers we note that _1:5_ and _seq(1,5)_ return the same result.
+
+There are also multiple ways to access variables in a data frame. For example we can use the square brackets _[[_ instead of the accessor _$_. Example code is included in the editor.
+
+If you instead try to access a column with just one bracket,
+
+_murders["population"]_
+
+R returns a subset of the original data frame containing just this column. This new object will be of class _data.frame_ rather than a vector. To access the column itself you need to use either the _$_ accessor or the double square brackets _[[_.
+
+Parentheses, in contrast, are mainly used alongside functions to indicate what argument the function should be doing something to. For example, when we did _class(p)_ in the last question, we wanted the function _class_ to do something related to the argument _p_.
+
+This is an example of how R can be a bit idiosyncratic sometimes. It is very common to find it confusing at first.
+
+#### Instructions
+* Use the square brackets _[[_ to extract the state abbreviations and assign them to the object _b_.
+* Then use the _identical_ function to determine if _a_, as defined in the previous exercises, and _b_ are the same.
+
+```{r}
+# We extract the population like this:
+p <- murders$population
+
+# This is how we do the same with the square brackets:
+o <- murders[["population"]] 
+
+# We can confirm these two are the same
+identical(o, p)
+
+# Use square brackets to extract `abb` from `murders` and assign it to b
+b <- murders[["abb"]]
+
+# Check if `a` and `b` are identical 
+identical(a,b)
+```
+
+
+## Exercise 4
+### Factors
+Using the _str()_ command, we saw that the region column stores a factor. You can corroborate this by using the _class_ command on the region column.
+
+The function _levels_ shows us the categories for the factor. 4
+
+#### Instructions
+* For this question we will combine two functions, in a nested way, to determine the number of unique categories. Use the functions _levels_ and _length_ to determine the number of regions defined by this dataset and contained in _murders$region_.
+
+```{r}
+# We can see the class of the region variable using class
+class(murders$region)
+
+# Determine the number of regions included in this variable
+length(levels(murders$region))
+```
+
+## Exercise 5
+### Tables
+The function _table_ takes a vector as input and returns the frequency of each unique element in the vector.
+
+#### Instructions
+We will use the table function to answer this question.
+
+* Use the _table_ function in one line of code to create a table showing the number of states per region.
+
+```{r}
+# The "c" in `c()` is short for "concatenate," which is the action of connecting items into a chain
+# The function `c()` connects all of the strings within it into a single vector, which we can assign to `x`
+x <- c("a", "a", "b", "b", "b", "c")
+# Here is an example of what the table function does
+table(x)
+
+# Write one line of code to show the number of states per region
+table(murders$region)
+
+```
