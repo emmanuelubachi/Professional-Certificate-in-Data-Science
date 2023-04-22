@@ -1,0 +1,23 @@
+---
+title: "Exercise 1"
+author: "Emmanuel Ubachi"
+date: "April 22, 2023"
+output: html_document
+---
+## Exercise
+### Using Variables 2
+What is the sum of the first 1000 positive integers?
+We can use the formula _n(n+1)/2_ to quickly compute this quantity.
+
+## Instruction
+* Use the same formula as the last exercise but change the value of _n_. Make sure you use the variable name _n_ to store the value 1000.
+* Instead of typing the result, use the formula and defined variable.
+
+```{r}
+# Below, write code to calculate the sum of the first 1000 integers
+
+# solution
+n <- 1000
+n*(n+1)/2
+```
+

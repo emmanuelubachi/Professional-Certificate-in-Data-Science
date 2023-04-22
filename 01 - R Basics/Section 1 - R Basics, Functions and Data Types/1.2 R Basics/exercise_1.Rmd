@@ -1,0 +1,34 @@
+---
+title: "Exercise 1"
+author: "Emmanuel Ubachi"
+date: "April 22, 2023"
+output: html_document
+---
+## Exercise
+### Using Variables 1
+What is the sum of the first _n_ positive integers?
+We can use the formula _n(n+1)/2_ to quickly compute this quantity.
+
+## Instruction
+* Define _n<-100_
+* Then use R to compute the sum of 1 through 100 using the formula _n(n+1)/2_. What is the sum?
+* Make sure you do not erase or change the sample code on DataCamp exercises.
+
+```{r}
+# Here is how you compute the sum for the first 20 integers
+20*(20+1)/2 
+
+# However, we can define a variable to use the formula for other values of n
+n <- 20
+n*(n+1)/2
+
+n <- 25
+n*(n+1)/2
+
+# Below, write code to calculate the sum of the first 100 integers
+
+# solution
+n <- 100
+n*(n+1)/2
+```
+

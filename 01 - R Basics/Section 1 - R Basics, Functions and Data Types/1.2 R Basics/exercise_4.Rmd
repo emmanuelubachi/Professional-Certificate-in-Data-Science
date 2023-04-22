@@ -1,0 +1,28 @@
+---
+title: "Exercise 1"
+author: "Emmanuel Ubachi"
+date: "April 22, 2023"
+output: html_document
+---
+## Exercise
+### Nested function calls 1
+In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type _log2(16)_ we evaluate the _log2_ function to get the log base 2 of _16_ which is _4_.
+
+In R it is often useful to evaluate a function inside another function. For example, _sqrt(log2(16))_ will calculate the log to the base 2 of 16 and then compute the square root of that value. So the first evaluation gives a 4 and this gets evaluated by _sqrt_ to give the final answer of 2.
+
+## Instruction
+* Use one line of code to compute the log, to the base 10, of the square root of 100.
+* Make sure your code includes the _log10_ and _sqrt_ functions.
+
+```{r}
+# log to the base 2 
+log2(16)
+
+# sqrt of the log to the base 2 of 16:
+sqrt(log2(16))
+
+# Compute log to the base 10 (log10) of the sqrt of 100. Do not use variables.
+## Solution
+log10(sqrt(100))
+```
+

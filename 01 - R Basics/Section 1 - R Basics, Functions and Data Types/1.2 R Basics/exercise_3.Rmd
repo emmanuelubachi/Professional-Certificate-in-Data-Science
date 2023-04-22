@@ -1,0 +1,19 @@
+---
+title: "Exercise 1"
+author: "Emmanuel Ubachi"
+date: "April 22, 2023"
+output: html_document
+---
+## Exercise
+### Function
+Run the following code in the R console:
+```{r}
+n <- 1000
+x <- seq(1,n)
+sum(x)
+```
+
+Based on the result, what do you think the functions _seq_ and _sum_ do? You can use the help system.
+## Instruction
+### Answer
+* seq creates a list of numbers and sum adds them up.
