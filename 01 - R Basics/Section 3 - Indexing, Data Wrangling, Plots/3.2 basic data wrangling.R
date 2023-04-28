@@ -4,6 +4,7 @@ library(dplyr)
 # adding a column with mutate
 library(dslabs)
 data("murders")
+
 murders <- mutate(murders, rate = total / population * 100000)
 
 # subsetting with filter
